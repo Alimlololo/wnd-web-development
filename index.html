@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebsiteNextDoor (WND) - разработка сайтов под ключ</title>
@@ -15,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body>
     <div class="bg-grid" aria-hidden="true"></div>
@@ -228,18 +230,21 @@
         <p class="section-kicker">Контакты</p>
         <h2>Оставь заявку или пиши сразу в мессенджеры</h2>
         <div class="contact-layout">
-          <form class="contact-form" action="https://formspree.io/f/meelrela" method="POST">
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="post">
+            <input type="hidden" name="access_key" value="d50d3e62-ea30-45da-be91-163e492d84f2" />
+            <input type="hidden" name="subject" value="Новая заявка с сайта WebsiteNextDoor (WND)" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
             <label>
               Имя
-              <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required />
+              <input type="text" name="name" placeholder="Как к вам обращаться" required />
             </label>
             <label>
               Телефон
-              <input type="tel" id="phone" name="phone" placeholder="+7 ..." required />
+              <input type="tel" name="phone" placeholder="+7 ..." required />
             </label>
             <label>
               Кратко о задаче
-              <textarea id="message" name="message" rows="5" placeholder="Что нужно сделать" required></textarea>
+              <textarea name="message" rows="4" placeholder="Что нужно сделать"></textarea>
             </label>
             <button class="btn btn-main" type="submit">Отправить заявку</button>
           </form>
